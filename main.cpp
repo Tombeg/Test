@@ -1,33 +1,27 @@
 #include <iostream>
 using namespace std;
 
-void dessineRectangle(int l, int h)
+void dessineRectangle(int largeur, int hauteur)
 {
-    for(int ligne(0); ligne < h; ligne++)
+    for(int ligne(0); ligne < hauteur; ligne++)
     {
-        if(ligne == 1)
+        if(ligne == 0 || ligne == hauteur-1)
         {
-            for(int colonne(0); colonne < l; colonne++)
+            for(int colonne(0); colonne < largeur; colonne++)
             {
                 cout << "*";
             }
         }
-        else if(ligne>1 && ligne<h)
+        else if(ligne>0 && ligne<hauteur)
         {
             cout << "*";
-            for(int colonne(0); colonne < l-1; colonne++)
+            for(int colonne(0); colonne < largeur-2; colonne++)
             {
                 cout << " ";
             }
             cout << "*";
         }
-        else if(ligne==h);
-        {
-            for(int colonne(0); colonne < l; colonne++)
-            {
-                cout << "*";
-            }
-        }
+
         cout << endl;
     }
 }
